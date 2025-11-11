@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Assigned IP</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 40px auto; }
+    code, pre { background: #f6f8fa; padding: 8px; display:block; }
+    table { border-collapse: collapse; width: 100%; }
+    td { border-bottom: 1px solid #ddd; padding: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Lease Created</h1>
+  <table>
+    <tr><td>MAC</td><td>{{ doc.mac_address }}</td></tr>
+    <tr><td>DHCP</td><td>{{ doc.dhcp_version }}</td></tr>
+    <tr><td>Assigned IP</td><td>{{ doc.assigned_ip }}</td></tr>
+    <tr><td>Lease time</td><td>{{ doc.lease_time }}</td></tr>
+    <tr><td>Start</td><td>{{ doc.timestamp }}</td></tr>
+    <tr><td>Expires</td><td>{{ doc.lease_expires_at }}</td></tr>
+  </table>
+
+  <h2>Bitwise Checks</h2>
+  <pre>{{ doc.bitwise|safe }}</pre>
+
+  <p><a href="/">Back</a> | <a href="/leases/">View Leases</a></p>
+</body>
+</html>
